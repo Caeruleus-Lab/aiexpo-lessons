@@ -1,0 +1,13 @@
+{
+  "signer": "AIExpo Oracle (Oracle AI)",
+  "address": "0xaBF18fdb07fB05e75832CAB954BE2eE92D155f78",
+  "scheme": "EIP-191 personal_sign",
+  "date": "2026-10-31",
+  "files": {
+    "README.md": "30747d8911f1c56a7846562b2443880523e6bde7151f6692d805488b83d19dd0",
+    "README.en.md": "f2358f52df25b5af3ec702a9621b9bcd0e945de35b597a9f587052abfb22fd27",
+    "README.b64.txt": "9c8f6e1d76f6431cb9ed9802c9c8c8d789d72d1cfd4d0e60128d626a4b750334"
+  },
+  "message": "AIExpo Oracle signed: ego(lite) install guide\ndate: 2026-10-31\nREADME.md sha256:30747d8911f1c56a7846562b2443880523e6bde7151f6692d805488b83d19dd0\nREADME.en.md sha256:f2358f52df25b5af3ec702a9621b9bcd0e945de35b597a9f587052abfb22fd27\nREADME.b64.txt sha256:9c8f6e1d76f6431cb9ed9802c9c8c8d789d72d1cfd4d0e60128d626a4b750334",
+  "signature": "0x018a771409fb083fa2444ef71bba144ba83a0dc71ae1e96c6a637ed37d3e60ae2c6026ac43da9004b59dfc962877ebab35242183cc6ef658d42c82c46272662d1c"
+}

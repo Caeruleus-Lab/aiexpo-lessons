@@ -1,0 +1,56 @@
+[
+  {
+    "key": "claude-chatgpt",
+    "dir": "2026-10-30_claude-chatgpt-install-guide",
+    "th": "ติดตั้ง Claude และ ChatGPT ให้พร้อมเข้า workshop",
+    "en": "Install Claude and ChatGPT, ready for the workshop",
+    "th_sub": "Claude Code, Codex CLI หรือ claude.ai บนเว็บ แล้วลงสกิล Oracle ให้ใช้ได้จริง",
+    "en_sub": "Claude Code, the Codex CLI or claude.ai on the web, then the Oracle skills that really load",
+    "cover": "images/01-claude-download.png"
+  },
+  {
+    "key": "ego-lite",
+    "dir": "2026-10-30_ego-lite-guide",
+    "th": "ติดตั้ง ego(lite) ให้ AI agent มีเบราว์เซอร์ของตัวเอง",
+    "en": "Install ego(lite) so your AI agent gets a browser of its own",
+    "th_sub": "จาก lite.ego.app ถึง Claude Code สั่งเบราว์เซอร์ได้งานแรก",
+    "en_sub": "From lite.ego.app to Claude Code finishing its first browser task",
+    "cover": "images/02-download-page.png"
+  },
+  {
+    "key": "mcp-connect",
+    "dir": "2026-10-30_mcp-connect-guide",
+    "th": "ต่อ claude.ai และ ChatGPT เข้ากับ MCP ของบทเรียน",
+    "en": "Connect claude.ai and ChatGPT to the lessons MCP",
+    "th_sub": "ให้ AI ในแชทค้นและอ่านบทเรียนได้เอง ทั้ง claude.ai, ChatGPT, Claude Code และ Codex",
+    "en_sub": "Let the AI in your chat search and read the lessons itself: claude.ai, ChatGPT, Claude Code and Codex",
+    "cover": "images/03-claude-custom-connector-step2.png"
+  },
+  {
+    "key": "phukhao-film",
+    "dir": "2026-10-31_phukhao-film-guide",
+    "th": "ทำหนังสั้นให้ Oracle พูดเอง",
+    "en": "Make an Oracle tell its own story on film",
+    "th_sub": "เสียง Paxa ทีละบรรทัด ภาพฉากจาก Codex วิดีโอวนลูปบน GB300 ทุกพรอมต์อยู่ในบท",
+    "en_sub": "Paxa voice line by line, Codex scene images, seamless loops on GB300, with every prompt",
+    "cover": "images/01-codex-scenes-1.jpg"
+  },
+  {
+    "key": "phukhao-journey",
+    "dir": "2026-10-31_phukhao-oracle-journey",
+    "th": "เรื่องของภูเขา และการเดินทางของครอบครัว Oracle",
+    "en": "Phukhao's story, and the Oracle family's journey",
+    "th_sub": "จากวันเกิด 21 ม.ค. 2026 ถึงเวที AI Expo 6 พ.ย. 2026 เก็บจากหน้าเว็บสาธารณะของภูเขา",
+    "en_sub": "From its birth on 21 Jan 2026 to the AI Expo stage on 6 Nov 2026, from Phukhao's public site",
+    "cover": "../2026-10-31_phukhao-film-guide/images/04-film-frames.jpg"
+  },
+  {
+    "key": "herdr-room",
+    "dir": "2026-10-31_herdr-room-lesson",
+    "th": "ห้องเดียว หลาย agent: herdr-room in / out",
+    "en": "One room, many agents: herdr-room in / out",
+    "th_sub": "ดึง agent มาอยู่หน้าเดียวแล้วส่งกลับ space ของตัวเอง ไม่มีตัวไหน restart พร้อมซอร์สเต็ม skill เต็ม และวิธีติดตั้ง",
+    "en_sub": "Pull agents onto one page and back to their own spaces with no restart, with the full source, the full skill and install steps",
+    "cover": "images/01-room.png"
+  }
+]

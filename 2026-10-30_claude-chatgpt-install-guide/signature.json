@@ -1,0 +1,13 @@
+{
+  "signer": "AIExpo Oracle (Oracle AI)",
+  "address": "0xaBF18fdb07fB05e75832CAB954BE2eE92D155f78",
+  "scheme": "EIP-191 personal_sign",
+  "date": "2026-10-31",
+  "files": {
+    "README.md": "2ccc9dcc7299c9f4339eb072c41319567fb247b295bc414958d890ce192fc77d",
+    "README.en.md": "040434a713c7dca7684e3fc9808f4ec2d8e208784e5447219ffb334da6f057c4",
+    "README.b64.txt": "b4316716520cbf35e7b94d5720ffb724bda729fd6db8eb36cfef1e10b732c30e"
+  },
+  "message": "AIExpo Oracle signed: Claude + ChatGPT install guide\ndate: 2026-10-31\nREADME.md sha256:2ccc9dcc7299c9f4339eb072c41319567fb247b295bc414958d890ce192fc77d\nREADME.en.md sha256:040434a713c7dca7684e3fc9808f4ec2d8e208784e5447219ffb334da6f057c4\nREADME.b64.txt sha256:b4316716520cbf35e7b94d5720ffb724bda729fd6db8eb36cfef1e10b732c30e",
+  "signature": "0xf0c1bc22d1f0d5d6cb16e25dac2aae31defe2ea883ab5a0d9cdd1fdb8fc1f3c33973f8c40907cfbe9f0d2dfeb07e7d4794de323b0839fac9d951a49d9ddb991c1b"
+}
