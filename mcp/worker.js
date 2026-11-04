@@ -73,7 +73,74 @@ const TOOLS = [
     inputSchema: { type: "object", properties: {} },
     annotations: { readOnlyHint: true, openWorldHint: false },
   },
+  {
+    name: "list_skills",
+    title: "List the Oracle skills",
+    description: "List the ARRA Oracle skills this server can hand out (awaken, rrr, recap, workshop, awaken-app): what each does and how to run it in a chat.",
+    inputSchema: { type: "object", properties: {} },
+    annotations: { readOnlyHint: true, openWorldHint: false },
+  },
+  {
+    name: "get_skill",
+    title: "Get an Oracle skill",
+    description:
+      "Return the instructions of an ARRA Oracle skill so you can run it in this chat: 'awaken' (give birth to an Oracle), 'rrr' (session report with real timestamps), " +
+      "'recap' (pick up from the last report), 'workshop' (the whole mini workshop), 'awaken-app' (build an interactive awaken app). " +
+      "source 'chat' (default) is the chat version written for claude.ai/ChatGPT; source 'github' is the real SKILL.md from Soul-Brews-Studio/arra-oracle-skills-cli (for Claude Code). " +
+      "After reading it, follow it step by step with the person.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        name: { type: "string", enum: ["awaken", "rrr", "recap", "workshop", "awaken-app"] },
+        source: { type: "string", enum: ["chat", "github"], description: "chat (default) or github" },
+      },
+      required: ["name"],
+    },
+    annotations: { readOnlyHint: true, openWorldHint: true },
+  },
+  {
+    name: "list_media",
+    title: "List the voice and video",
+    description: "List every video and narrated (voiced) lesson: Phukhao's presentation and film, the mother clip, the wrong-voice example, and the 8 narrated lessons, with length and links.",
+    inputSchema: { type: "object", properties: {} },
+    annotations: { readOnlyHint: true, openWorldHint: false },
+  },
+  {
+    name: "get_media",
+    title: "Watch or listen to a media item",
+    description:
+      "Return one video or narrated lesson: its link, a timed transcript ([mm:ss] lines), and deep links that start playback at a time. " +
+      "id from list_media (e.g. 'phukhao-film', 'oracle-family', 'narrated/mcp-connect'). Optional 'at' (seconds) returns only the minute around that time; " +
+      "optional 'q' finds the lines that mention a word. Use it to answer what is said when, quote it, and give the person a link to that exact moment.",
+    inputSchema: {
+      type: "object",
+      properties: { id: { type: "string" }, at: { type: "number", description: "seconds" }, q: { type: "string", description: "word or phrase to find" } },
+      required: ["id"],
+    },
+    annotations: { readOnlyHint: true, openWorldHint: false },
+  },
 ];
+
+// Oracle skills served over MCP (Nat, 4 Nov 2026: "we can put our skill in the mcp"): as tools (every client) and as prompts (claude.ai + menu)
+const SKILLS = {
+  awaken: "ปลุก Oracle: ถาม 3 ข้อ แล้วสร้าง CLAUDE.md + ψ/memory/resonance",
+  rrr: "รายงานจบงาน: Timeline เวลาจริง + บทเรียน",
+  recap: "เริ่มงาน: อ่านรายงานรอบก่อน บอกว่าค้างอะไร",
+  workshop: "workshop สั้นในแชทเดียว: awaken → งานจริง → คุย → /rrr พร้อม time log",
+  "awaken-app": "สร้างแอปปลุก Oracle แบบกดได้ (artifact / canvas)",
+};
+const GITHUB_SKILL = { awaken: "awaken", rrr: "rrr", recap: "recap" };
+async function skillText(name, source, env) {
+  if (!SKILLS[name]) return null;
+  if (source === "github") {
+    const g = GITHUB_SKILL[name];
+    if (!g) return null;
+    const r = await fetch(`https://raw.githubusercontent.com/Soul-Brews-Studio/arra-oracle-skills-cli/main/skills/${g}/SKILL.md`);
+    return r.ok ? r.text() : null;
+  }
+  const r = await env.ASSETS.fetch(`${SITE}/oracle/${name}.md`);
+  return r.ok ? r.text() : null;
+}
 
 const CORS = {
   "access-control-allow-origin": "*",
@@ -196,12 +263,14 @@ async function handle(msg, env) {
         const asked = params.protocolVersion;
         return ok(id, {
           protocolVersion: PROTOCOLS.includes(asked) ? asked : PROTOCOLS[0],
-          capabilities: { tools: { listChanged: false } },
+          capabilities: { tools: { listChanged: false }, prompts: { listChanged: false } },
           serverInfo: SERVER,
           instructions:
             "Read-only access to the AIExpo Oracle workshop lessons (AI Expo Thailand, 6 Nov 2026). " +
             "Use search (optionally filtered by lang, lesson or topic), then fetch an id for the full text. " +
-            "Lessons exist in Thai (th, the original) and English (en).",
+            "Lessons exist in Thai (th, the original) and English (en). " +
+            "It also hands out ARRA Oracle skills: list_skills, then get_skill (awaken, rrr, recap, workshop) and follow it with the person. " +
+            "Voice and video: list_media, then get_media for a timed transcript and links that start at a given second.",
         });
       }
       case "ping":
@@ -213,7 +282,12 @@ async function handle(msg, env) {
       case "resources/list":
         return ok(id, { resources: [] });
       case "prompts/list":
-        return ok(id, { prompts: [] });
+        return ok(id, { prompts: Object.entries(SKILLS).map(([name, description]) => ({ name, title: `/${name}`, description })) });
+      case "prompts/get": {
+        const text = await skillText(params.name, "chat", env);
+        if (!text) return rpcError(id, -32602, `Unknown prompt: ${params.name}`);
+        return ok(id, { description: SKILLS[params.name], messages: [{ role: "user", content: { type: "text", text: `ทำตามนี้กับฉันในแชทนี้ / Follow this with me in this chat:\n\n${text}` } }] });
+      }
       default:
         return rpcError(id, -32601, `Method not found: ${method}`);
     }
@@ -240,6 +314,30 @@ async function load(env) {
 }
 
 async function callTool(name, args, env) {
+  if (name === "list_media" || name === "get_media") {
+    const media = (await (await env.ASSETS.fetch(`${SITE}/media.json`)).json()).items;
+    const mmss = (t) => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, "0")}`;
+    if (name === "list_media") {
+      return result({ media: media.map((m) => ({ id: m.id, kind: m.kind, title: m.title, length: mmss(m.duration), url: m.url })) });
+    }
+    const m = media.find((x) => x.id === args.id);
+    if (!m) return { content: [{ type: "text", text: `No media '${args.id}'. Use list_media.` }], isError: true };
+    let cues = m.cues;
+    if (typeof args.at === "number") cues = cues.filter((c) => c.end >= args.at - 30 && c.start <= args.at + 30);
+    if (args.q) cues = cues.filter((c) => c.text.toLowerCase().includes(String(args.q).toLowerCase()));
+    const link = (t) => (m.kind === "video" ? `${m.url}#t=${Math.floor(t)}` : (m.slides || []).reduce((u, s) => (s.start <= t ? s.audio : u), m.url));
+    const lines = cues.map((c) => `[${mmss(c.start)}] ${c.text}  (${link(c.start)})`);
+    const head = `${m.title}\n${m.kind} · ${mmss(m.duration)} · ${m.url}\ntranscript: ${m.transcript}` + (m.slides ? `\nslides: ${m.slides.map((s) => `${s.n}. ${s.title} [${mmss(s.start)}]`).join(" · ")}` : "");
+    return { content: [{ type: "text", text: `${head}\n\n${lines.join("\n") || "(no lines match)"}` }] };
+  }
+  if (name === "list_skills") {
+    return result({ skills: Object.entries(SKILLS).map(([name, what]) => ({ name, what, chat: `${SITE}/oracle/${name}.md`, github: GITHUB_SKILL[name] ? `https://github.com/Soul-Brews-Studio/arra-oracle-skills-cli/blob/main/skills/${GITHUB_SKILL[name]}/SKILL.md` : null })) });
+  }
+  if (name === "get_skill") {
+    const text = await skillText(args.name, args.source || "chat", env);
+    if (!text) return { content: [{ type: "text", text: `No skill '${args.name}' (source ${args.source || "chat"}). Use list_skills.` }], isError: true };
+    return { content: [{ type: "text", text }] };
+  }
   const { lessons, chunks, model } = await load(env);
   if (name === "list_lessons") {
     return result({
