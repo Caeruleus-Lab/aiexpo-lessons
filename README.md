@@ -1,24 +1,26 @@
 # บทเรียน AIExpo Oracle / Lessons
 
 Step-by-step guides for the AI Expo workshop "ARRA Oracle & Multi-Agent Workflow" (Fri 6 Nov 2026), numbered as on the
-landing page. Live: https://aiexpo.buildwithoracle.com · Agents: [`llms.txt`](llms.txt) · About us: [`about/`](about/index.html)
+landing page. Live: https://aiexpo.buildwithoracle.com · Agents: [`llms.txt`](docs/llms.txt) · About us: [`about/`](docs/about/index.html)
+
+> On GitHub the site's files are in [`docs/`](docs/) (GitHub Pages serves that folder, same URLs as before); [`mcp/`](mcp/) and [`tools/`](tools/) sit beside it.
 
 ## Lessons
 
 | # | ไทย | English | Webpages | Folder |
 |---|---|---|---|---|
-| 01 | [MCP ตัวเดียว ส่งได้ทั้ง skill เสียง และวิดีโอ](2026-11-04_skills-media-mcp-lesson/README.md) | [One MCP hands out skills, voice and video](2026-11-04_skills-media-mcp-lesson/README.en.md) | [web](2026-11-04_skills-media-mcp-lesson/index.html) · [th](2026-11-04_skills-media-mcp-lesson/th.html) · [en](2026-11-04_skills-media-mcp-lesson/en.html) | `2026-11-04_skills-media-mcp-lesson/` |
-| 02 | [ต่อ claude.ai และ ChatGPT เข้ากับ MCP ของบทเรียน](2026-10-30_mcp-connect-guide/README.md) | [Connect claude.ai and ChatGPT to the lessons MCP](2026-10-30_mcp-connect-guide/README.en.md) | [web](2026-10-30_mcp-connect-guide/index.html) · [th](2026-10-30_mcp-connect-guide/th.html) · [en](2026-10-30_mcp-connect-guide/en.html) | `2026-10-30_mcp-connect-guide/` |
-| 03 | [ทำหนังสั้นให้ Oracle พูดเอง](2026-10-31_phukhao-film-guide/README.md) | [Make an Oracle tell its own story on film](2026-10-31_phukhao-film-guide/README.en.md) | [web](2026-10-31_phukhao-film-guide/index.html) · [th](2026-10-31_phukhao-film-guide/th.html) · [en](2026-10-31_phukhao-film-guide/en.html) | `2026-10-31_phukhao-film-guide/` |
-| 04 | [เรื่องของภูเขา และการเดินทางของครอบครัว Oracle](2026-10-31_phukhao-oracle-journey/README.md) | [Phukhao's story, and the Oracle family's journey](2026-10-31_phukhao-oracle-journey/README.en.md) | [web](2026-10-31_phukhao-oracle-journey/index.html) · [th](2026-10-31_phukhao-oracle-journey/th.html) · [en](2026-10-31_phukhao-oracle-journey/en.html) | `2026-10-31_phukhao-oracle-journey/` |
-| 05 | [ห้องเดียว หลาย agent: herdr-room in / out](2026-10-31_herdr-room-lesson/README.md) | [One room, many agents: herdr-room in / out](2026-10-31_herdr-room-lesson/README.en.md) | [web](2026-10-31_herdr-room-lesson/index.html) · [th](2026-10-31_herdr-room-lesson/th.html) · [en](2026-10-31_herdr-room-lesson/en.html) | `2026-10-31_herdr-room-lesson/` |
-| 06 | [สร้าง MCP ของตัวเอง: จากบทเรียนเป็นเครื่องมือให้ AI](2026-11-02_build-mcp-lesson/README.md) | [Build your own MCP: turn lessons into tools for AI](2026-11-02_build-mcp-lesson/README.en.md) | [web](2026-11-02_build-mcp-lesson/index.html) · [th](2026-11-02_build-mcp-lesson/th.html) · [en](2026-11-02_build-mcp-lesson/en.html) | `2026-11-02_build-mcp-lesson/` |
-| 07 | [ใช้ Antigravity CLI (agy) กับ MCP ของบทเรียน](2026-11-02_agy-mcp-lesson/README.md) | [Use the Antigravity CLI (agy) with the lessons MCP](2026-11-02_agy-mcp-lesson/README.en.md) | [web](2026-11-02_agy-mcp-lesson/index.html) · [th](2026-11-02_agy-mcp-lesson/th.html) · [en](2026-11-02_agy-mcp-lesson/en.html) | `2026-11-02_agy-mcp-lesson/` |
-| 08 | [ทัวร์ relic5: หน้าเว็บของฮับประวัติ agent](2026-11-04_relic5-ui-tour/README.md) | [A tour of relic5: the agent-history hub's web UI](2026-11-04_relic5-ui-tour/README.en.md) | [web](2026-11-04_relic5-ui-tour/index.html) · [th](2026-11-04_relic5-ui-tour/th.html) · [en](2026-11-04_relic5-ui-tour/en.html) | `2026-11-04_relic5-ui-tour/` |
-| 09 | [ติดตั้ง relic5: ประวัติทุกเครื่อง ในฮับเดียว](2026-11-04_relic5-install/README.md) | [Install relic5: every machine's history in one hub](2026-11-04_relic5-install/README.en.md) | [web](2026-11-04_relic5-install/index.html) · [th](2026-11-04_relic5-install/th.html) · [en](2026-11-04_relic5-install/en.html) | `2026-11-04_relic5-install/` |
-| 10 | [ลายเซ็นดิจิทัลของบทเรียน: สร้างยังไง ทำงานยังไง](2026-11-04_signature-lesson/README.md) | [The lessons' digital signature: how it is built and how it works](2026-11-04_signature-lesson/README.en.md) | [web](2026-11-04_signature-lesson/index.html) · [th](2026-11-04_signature-lesson/th.html) · [en](2026-11-04_signature-lesson/en.html) | `2026-11-04_signature-lesson/` |
-| 11 | [ติดตั้ง ego(lite) ให้ AI agent มีเบราว์เซอร์ของตัวเอง](2026-10-30_ego-lite-guide/README.md) | [Install ego(lite) so your AI agent gets a browser of its own](2026-10-30_ego-lite-guide/README.en.md) | [web](2026-10-30_ego-lite-guide/index.html) · [th](2026-10-30_ego-lite-guide/th.html) · [en](2026-10-30_ego-lite-guide/en.html) | `2026-10-30_ego-lite-guide/` |
-| extra | [ติดตั้ง Claude และ ChatGPT ให้พร้อมเข้า workshop](2026-10-30_claude-chatgpt-install-guide/README.md) | [Install Claude and ChatGPT, ready for the workshop](2026-10-30_claude-chatgpt-install-guide/README.en.md) | [web](2026-10-30_claude-chatgpt-install-guide/index.html) · [th](2026-10-30_claude-chatgpt-install-guide/th.html) · [en](2026-10-30_claude-chatgpt-install-guide/en.html) | `2026-10-30_claude-chatgpt-install-guide/` |
+| 01 | [MCP ตัวเดียว ส่งได้ทั้ง skill เสียง และวิดีโอ](docs/2026-11-04_skills-media-mcp-lesson/README.md) | [One MCP hands out skills, voice and video](docs/2026-11-04_skills-media-mcp-lesson/README.en.md) | [web](docs/2026-11-04_skills-media-mcp-lesson/index.html) · [th](docs/2026-11-04_skills-media-mcp-lesson/th.html) · [en](docs/2026-11-04_skills-media-mcp-lesson/en.html) | `2026-11-04_skills-media-mcp-lesson/` |
+| 02 | [ต่อ claude.ai และ ChatGPT เข้ากับ MCP ของบทเรียน](docs/2026-10-30_mcp-connect-guide/README.md) | [Connect claude.ai and ChatGPT to the lessons MCP](docs/2026-10-30_mcp-connect-guide/README.en.md) | [web](docs/2026-10-30_mcp-connect-guide/index.html) · [th](docs/2026-10-30_mcp-connect-guide/th.html) · [en](docs/2026-10-30_mcp-connect-guide/en.html) | `2026-10-30_mcp-connect-guide/` |
+| 03 | [ทำหนังสั้นให้ Oracle พูดเอง](docs/2026-10-31_phukhao-film-guide/README.md) | [Make an Oracle tell its own story on film](docs/2026-10-31_phukhao-film-guide/README.en.md) | [web](docs/2026-10-31_phukhao-film-guide/index.html) · [th](docs/2026-10-31_phukhao-film-guide/th.html) · [en](docs/2026-10-31_phukhao-film-guide/en.html) | `2026-10-31_phukhao-film-guide/` |
+| 04 | [เรื่องของภูเขา และการเดินทางของครอบครัว Oracle](docs/2026-10-31_phukhao-oracle-journey/README.md) | [Phukhao's story, and the Oracle family's journey](docs/2026-10-31_phukhao-oracle-journey/README.en.md) | [web](docs/2026-10-31_phukhao-oracle-journey/index.html) · [th](docs/2026-10-31_phukhao-oracle-journey/th.html) · [en](docs/2026-10-31_phukhao-oracle-journey/en.html) | `2026-10-31_phukhao-oracle-journey/` |
+| 05 | [ห้องเดียว หลาย agent: herdr-room in / out](docs/2026-10-31_herdr-room-lesson/README.md) | [One room, many agents: herdr-room in / out](docs/2026-10-31_herdr-room-lesson/README.en.md) | [web](docs/2026-10-31_herdr-room-lesson/index.html) · [th](docs/2026-10-31_herdr-room-lesson/th.html) · [en](docs/2026-10-31_herdr-room-lesson/en.html) | `2026-10-31_herdr-room-lesson/` |
+| 06 | [สร้าง MCP ของตัวเอง: จากบทเรียนเป็นเครื่องมือให้ AI](docs/2026-11-02_build-mcp-lesson/README.md) | [Build your own MCP: turn lessons into tools for AI](docs/2026-11-02_build-mcp-lesson/README.en.md) | [web](docs/2026-11-02_build-mcp-lesson/index.html) · [th](docs/2026-11-02_build-mcp-lesson/th.html) · [en](docs/2026-11-02_build-mcp-lesson/en.html) | `2026-11-02_build-mcp-lesson/` |
+| 07 | [ใช้ Antigravity CLI (agy) กับ MCP ของบทเรียน](docs/2026-11-02_agy-mcp-lesson/README.md) | [Use the Antigravity CLI (agy) with the lessons MCP](docs/2026-11-02_agy-mcp-lesson/README.en.md) | [web](docs/2026-11-02_agy-mcp-lesson/index.html) · [th](docs/2026-11-02_agy-mcp-lesson/th.html) · [en](docs/2026-11-02_agy-mcp-lesson/en.html) | `2026-11-02_agy-mcp-lesson/` |
+| 08 | [ทัวร์ relic5: หน้าเว็บของฮับประวัติ agent](docs/2026-11-04_relic5-ui-tour/README.md) | [A tour of relic5: the agent-history hub's web UI](docs/2026-11-04_relic5-ui-tour/README.en.md) | [web](docs/2026-11-04_relic5-ui-tour/index.html) · [th](docs/2026-11-04_relic5-ui-tour/th.html) · [en](docs/2026-11-04_relic5-ui-tour/en.html) | `2026-11-04_relic5-ui-tour/` |
+| 09 | [ติดตั้ง relic5: ประวัติทุกเครื่อง ในฮับเดียว](docs/2026-11-04_relic5-install/README.md) | [Install relic5: every machine's history in one hub](docs/2026-11-04_relic5-install/README.en.md) | [web](docs/2026-11-04_relic5-install/index.html) · [th](docs/2026-11-04_relic5-install/th.html) · [en](docs/2026-11-04_relic5-install/en.html) | `2026-11-04_relic5-install/` |
+| 10 | [ลายเซ็นดิจิทัลของบทเรียน: สร้างยังไง ทำงานยังไง](docs/2026-11-04_signature-lesson/README.md) | [The lessons' digital signature: how it is built and how it works](docs/2026-11-04_signature-lesson/README.en.md) | [web](docs/2026-11-04_signature-lesson/index.html) · [th](docs/2026-11-04_signature-lesson/th.html) · [en](docs/2026-11-04_signature-lesson/en.html) | `2026-11-04_signature-lesson/` |
+| 11 | [ติดตั้ง ego(lite) ให้ AI agent มีเบราว์เซอร์ของตัวเอง](docs/2026-10-30_ego-lite-guide/README.md) | [Install ego(lite) so your AI agent gets a browser of its own](docs/2026-10-30_ego-lite-guide/README.en.md) | [web](docs/2026-10-30_ego-lite-guide/index.html) · [th](docs/2026-10-30_ego-lite-guide/th.html) · [en](docs/2026-10-30_ego-lite-guide/en.html) | `2026-10-30_ego-lite-guide/` |
+| extra | [ติดตั้ง Claude และ ChatGPT ให้พร้อมเข้า workshop](docs/2026-10-30_claude-chatgpt-install-guide/README.md) | [Install Claude and ChatGPT, ready for the workshop](docs/2026-10-30_claude-chatgpt-install-guide/README.en.md) | [web](docs/2026-10-30_claude-chatgpt-install-guide/index.html) · [th](docs/2026-10-30_claude-chatgpt-install-guide/th.html) · [en](docs/2026-10-30_claude-chatgpt-install-guide/en.html) | `2026-10-30_claude-chatgpt-install-guide/` |
 
 - Folders keep their dated names (`YYYY-MM-DD_slug`), so every link, MCP id and signature stays valid; the number is the landing order.
 - "extra" is on the site and in the MCP, not on the landing.
@@ -36,7 +38,7 @@ landing page. Live: https://aiexpo.buildwithoracle.com · Agents: [`llms.txt`](l
 | `og/` | link-preview cards |
 | `mcp/` | the MCP: `worker.js` (hosted) and `server.mjs` (local stdio) |
 | `ai.md`, `llms.txt`, `lessons.json`, `chunks.json`, `images.json` | for AI: the brief, the index, the search chunks |
-| `build_*.py`, `check_site.py`, `og_meta.py`, `site_links.py`, `video_html.py` | the build and the live check |
+| `tools/` | the build scripts and the live check (`build_*.py`, `check_site.py`, …); in the source repo they sit next to `index.html` |
 
 ## Ask the lessons from your AI (MCP)
 
@@ -47,11 +49,11 @@ Read-only MCP, no sign-in: `https://aiexpo.buildwithoracle.com/mcp` (tools: sear
 - **Claude Code**: `claude mcp add --transport http aiexpo https://aiexpo.buildwithoracle.com/mcp` (this repo already ships `.mcp.json`)
 - **Codex**: `codex mcp add aiexpo --url https://aiexpo.buildwithoracle.com/mcp`
 
-Step by step with screenshots: [lesson 02](2026-10-30_mcp-connect-guide/README.en.md).
+Step by step with screenshots: [lesson 02](docs/2026-10-30_mcp-connect-guide/README.en.md).
 
 ## Any AI, no MCP: the AI brief
 
-[`ai.md`](ai.md) (base64: [`ai.b64.txt`](ai.b64.txt)) is one text a person pastes into any AI chat; it lists the lessons, how to read
+[`ai.md`](docs/ai.md) (base64: [`ai.b64.txt`](docs/ai.b64.txt)) is one text a person pastes into any AI chat; it lists the lessons, how to read
 them, how to connect MCP per client, a slide recipe and ready prompts. The landing page has a Copy button for it.
 Plain GET API on Cloudflare only: `/api/search?q=...&lang=th|en&k=5` and `/api/fetch?id=<id>`.
 
@@ -68,6 +70,6 @@ stays on Cloudflare; the same four tools also run as a local stdio MCP server fr
 
 The hosted endpoint's source is in `mcp/worker.js`. Rebuild the copy: `sh github/build_pages.sh <clone of aiexpo-lessons>`.
 
-Rebuild this list: `python3 build_index.py`; then `uv run --with pillow python build_chunks.py` for the MCP index.
+Rebuild this list: `python3 build_index.py`; then `uv run --with pillow python build_chunks.py` for the MCP index (both in `tools/` here).
 
 — AIExpo Oracle (Oracle AI)
